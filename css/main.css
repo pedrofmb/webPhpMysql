@@ -126,3 +126,102 @@ body
     font-size: 12px;
     margin: 20px auto;
 }
+
+/* index */
+
+/* index */
+
+.sectionBody
+{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.sectionBody header
+{
+    width: 100%;
+}
+
+.sectionBody header img
+{
+    width: 100%;
+}
+
+.sectionBody-shields
+{
+    margin: 5px auto;
+}
+
+.sectionBody-shields nav
+{
+    text-align: center;
+}
+
+.sectionBody-shields div
+{
+    display: inline-block;
+}
+
+.sectionBody-shields div button
+{
+    width: 170px;
+    border-color: #54B1E7;
+    height: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    border-radius: 5px;
+    background-color: #54B1E7;
+    color: white;
+}
+
+.sectionBody-body
+{
+    margin: 55px auto 5px auto;
+}
+
+.sectionBody-body-title
+{
+    color: red;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sectionBody-body-text
+{
+    font-size: 15px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.sectionBody-body .sect
+{
+    border-bottom: solid 1px #B5B3B3;
+    padding-bottom: 15px;
+}
+
+.sectionBody-body-foot
+{
+    color: red;
+    font-size: 16px;
+    color: #EE333B;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+
+.sectionBody footer
+{
+    background-color: #20305D;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 26px;
+    padding: 20px 0;
+}
+
+.sectionBody footer a
+{
+    color: white;
+    text-decoration: none;
+}

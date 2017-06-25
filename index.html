@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>HHD Hockey</title>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Viewer">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="lib.frontend/common.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script>
+        $(document).ready(function(){
+            $(".sectionBody-shields button").click(function(ev)
+            {
+                var item = $(ev.target).attr("data-typeReg");
+                location.href = "register.html?page=" + item;
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <section class="sectionBody">
+        <header><img src="images/headerindex.png" /></header>
+        <article>
+            <section class="sectionBody-shields">
+                <nav>
+                    <div><img src="images/shield1.png" /><br /><button type="button" data-typeReg="1">Register</button></div>
+                    <div><img src="images/shield2.png" /><br /><button type="button" data-typeReg="2">Register</button></div>
+                    <div><img src="images/shield3.png" /><br /><button type="button" data-typeReg="3">Register</button></div>
+                </nav>
+            </section>
+            <section class="sectionBody-body">
+                <nav class="sectionBody-body-title sect">Focus of Clinic</nav>
+                <nav class="sectionBody-body-text sect">Skating and Lateral Functionality, Transitional Tactics, Angling Approach, Proper Gapping</nav>
+                <nav class="sectionBody-body-text sect">Puck Retrieval, Escaping &amp; Relieving Pressure</nav>
+                <nav class="sectionBody-body-text sect">Point Shots, Lateral Movement Shooting, Creating New Shooting Lanes</nav>
+                <nav class="sectionBody-body-text sect">Net Front Battles, Defensive Side Positioning, Stick Positioning</nav>
+                <nav class="sectionBody-body-foot">LOCATION of CLINIC: CENTER ICE OF DUPAGE 1N450 HIGHLAND AVE GLEN ELLYN, IL 60137</nav>
+            </section>
+        </article>
+        <footer>
+            <a href = "mailto:info@hddhockeycom">info@hhdhockey.com</a>
+        </footer>
+    </section>
+</body>
+
+</html>
