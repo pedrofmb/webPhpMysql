@@ -2,6 +2,7 @@
 session_start();
 require("../connect.php");
 $link = Conectar();
+
 $opcion = $_POST["option"];
 
 switch ($opcion)
@@ -14,6 +15,11 @@ switch ($opcion)
     case "listRegistrations":
     {
         ListRegistrations();
+        break;
+    }
+    case "exportToExcel":
+    {
+        ExportDataToExcel();
         break;
     }
     case "logout":
@@ -59,6 +65,11 @@ function ListRegistrations()
      }
 
     echo json_encode($array);
+}
+
+function ExportDataToExcel()
+{
+    echo "<script>location.href='exportExcel.php';</script>";
 }
 
 function Logout()

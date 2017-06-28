@@ -38,7 +38,42 @@ if( ($port != 80 && $hostOrigin == $schema . "://" . $serverName . ":" . $port) 
     $affectRows = mysql_affected_rows();
 
     if($affectRows > 0)
+    {
         echo '{"status": true,"message":""}';
+        //Send Email
+
+        $to  = 'aidan@example.com' . ', ';
+        $to .= 'wez@example.com';
+
+        // title
+        $title = 'HHD event';
+
+        // message
+        $message = '
+        <html>
+        <head>
+        <title>HDD Event</title>
+        </head>
+        <body>
+        <p>Thank you for submitting your registration for this HHD event. To complete the final step of registration, please click on the link below to submit your payment.</p>
+        <p>&nbsp;</p>
+        <p><a href="">Paypal</a></p>
+        <p>&nbsp;</p>
+        <p>Once payment is received, your registration will be reviewed and you will be notified whether or not you were accepted into this event. No consideration will be given until payment has been submitted.</p>
+        <p>As with all HHD events, there are limited spots available and registrations are frequently denied due to being at capacity. In the event that there is not a spot for your player, you will be notified and a full refund will be given.</p>
+        <p><br /></p>
+        <p>Thank you for registering, you will hear from us shortly.</p>
+        </body>
+        </html>
+        ';
+
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+        // sent
+        mail($to, $title, $message, $headers);
+
+    }
     else
         echo '{"status": false,"message":""}';
 }

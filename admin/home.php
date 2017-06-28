@@ -47,17 +47,23 @@ if($_SESSION["user_id"]=='')
             <script src="../lib.frontend/bootstrap/js/bootstrap.min.js" ></script>
 
             <script>
-                 $(document).ready(function(){
+                 $(document).ready(function()
+                 {
                      DataRegistration();
 
-                     $("#logoutLink").click(function(){
-                           
+                     $("#logoutLink").click(function()
+                     {      
                            $.post("restOperations.php", 
                             {
                                 'option' : 'logout'
                             }, function (data) {
                                 location.replace('index.html');
                             },'text');
+                     });
+
+                     $("#btnExportExcel").click(function()
+                     {
+                        location.href = "exportExcel.php";
                      });
 
                  });
@@ -71,6 +77,9 @@ if($_SESSION["user_id"]=='')
                 <div style="float:right;"><a href="#" id="logoutLink"><strong>Logout</strong></a></div>
             </header>
             <br style="clear:both;" />
+        </section>
+        <section class="buttons">
+         <nav><button type="button" class="btn btn-primary" id="btnExportExcel">Export Excel</button></nav>
         </section>
         <section class="tableZone">
             <table id="tableList" class="table table-striped">

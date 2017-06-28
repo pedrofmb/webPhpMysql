@@ -30,6 +30,12 @@ body{
     margin: 10px auto;
 }
 
+.buttons
+{
+    width: 80%;
+    margin: 30px auto;
+}
+
 .tableZone
 {
     width: 80%;
