@@ -39,11 +39,10 @@ if( ($port != 80 && $hostOrigin == $schema . "://" . $serverName . ":" . $port) 
 
     if($affectRows > 0)
     {
-        echo '{"status": true,"message":""}';
         //Send Email
 
-        $to  = 'aidan@example.com' . ', ';
-        $to .= 'wez@example.com';
+        $to  = $_POST["emailGuardian1"] . ', ';
+        $to .= $_POST["emailGuardian1"];
 
         // title
         $title = 'HHD event';
@@ -57,7 +56,7 @@ if( ($port != 80 && $hostOrigin == $schema . "://" . $serverName . ":" . $port) 
         <body>
         <p>Thank you for submitting your registration for this HHD event. To complete the final step of registration, please click on the link below to submit your payment.</p>
         <p>&nbsp;</p>
-        <p><a href="">Paypal</a></p>
+        <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AED49RRKRY33Q" target="_blank">Paypal</a></p>
         <p>&nbsp;</p>
         <p>Once payment is received, your registration will be reviewed and you will be notified whether or not you were accepted into this event. No consideration will be given until payment has been submitted.</p>
         <p>As with all HHD events, there are limited spots available and registrations are frequently denied due to being at capacity. In the event that there is not a spot for your player, you will be notified and a full refund will be given.</p>
@@ -69,10 +68,14 @@ if( ($port != 80 && $hostOrigin == $schema . "://" . $serverName . ":" . $port) 
 
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		
+		$headers .= 'To: '. $_POST["nameGuardian1"] .' <'. $_POST["emailGuardian1"] .'>' . "\r\n";
+		$headers .= 'From: HHDHOCKEY <info@hhdhockey.com>' . "\r\n";
 
         // sent
-        mail($to, $title, $message, $headers);
+        $emailSend = mail($to, $title, $message, $headers);
 
+        echo '{"status": true, "message":"", "emailConfirm" : '. $emailSend .'}';
     }
     else
         echo '{"status": false,"message":""}';
